@@ -1,0 +1,532 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #050505;
+font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+    text-align: center;
+    font-size: 60px;
+    color:white;
+    text-align:center;
+    font-size:65px;
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 8px #9b5cff,
+    0 0 20px #7b2ff7;
+}
+.calci{
+    height:80vh;
+    width:70vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     height:80vh;
+    width:70vw;
+
+    background:#111;
+
+    border:2px solid #7b2ff7;
+
+    border-radius:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 15px #7b2ff7,
+    0 0 40px rgba(123,47,247,.4);
+
+}
+.screen{
+    height: 25%;
+    width:90%;
+    border: 1px solid whitesmoke;
+    background-color: black;
+    color: greenyellow;
+      height:25%;
+    width:90%;
+
+    background:#0c0c0c;
+
+    border:2px solid #7b2ff7;
+
+    border-radius:20px;
+
+    box-shadow:
+    inset 0 0 12px rgba(123,47,247,.5);
+
+}
+.operators{
+    margin: 10px;
+    height: 10%;
+    width:100%;
+    font-size: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.operand{
+    height: 100%;
+    width:23%;
+     font-size: 55px;
+     text-align: center;
+    border: 1px solid white;
+    color: antiquewhite;
+     height:100%;
+    width:23%;
+
+    background:linear-gradient(
+    135deg,
+    #8b3dff,
+    #4b0082);
+
+    border:none;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+.keypad{
+    border:1px solid white;
+    height: 55%;
+    width:90%;
+    display: flex;
+     border:2px solid #333;
+    border-radius:20px;
+    padding:20px;
+    width:90%;
+       border:2px solid #7b2ff7;
+
+    
+}
+
+.key{
+    height: 65px;
+    width: 130px;
+     gap: 15px;
+    padding: 15px;
+    text-align: center;
+    font-size: 50px;
+    border: 1px solid greenyellow;
+    color: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+     height:70px;
+
+    width:120px;
+
+    background:#1d1d1d;
+
+    border:1px solid #7b2ff7;
+
+    border-radius:18px;
+
+    color:white;
+
+    box-shadow:
+    0 5px 10px rgba(0,0,0,.5);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+.submit{
+    height: 10%;
+    width: 40%;
+    margin: 15px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+    border: 1px solid greenyellow;
+    border-radius: 15%;
+     width:45%;
+
+    border-radius:40px;
+
+    background:linear-gradient(
+    90deg,
+    #7b2ff7,
+    #b026ff);
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+.key:hover,
+.operand:hover,
+.submit:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 15px #7b2ff7,
+    0 0 30px #7b2ff7;
+}
+.key:active,
+.operand:active,
+.submit:active{
+
+    transform:scale(.95);
+}
+.screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.operand1 ,.operand2,.operator{
+    /* border: 1px solid whitesmoke; */
+    height: 90px;
+    width: 90px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.dis{
+  display: none;
+}
+/* =========================================
+   FIX TABLET + MOBILE CALCULATOR
+========================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        overflow-x: hidden;
+        padding: 20px 15px 30px;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin: 10px 0 20px;
+    }
+
+    .calci {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        min-height: 0;
+
+        padding: 15px;
+
+        margin: 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    /* =========================
+       SCREEN
+    ========================= */
+
+    .screen {
+        width: 100%;
+        height: 120px;
+
+        margin-bottom: 12px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .operand1,
+    .operand2 {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+
+        height: 70px;
+
+        font-size: 32px;
+
+        overflow: hidden;
+        overflow-wrap: anywhere;
+    }
+
+    .operator {
+        width: 35px;
+        min-width: 35px;
+
+        height: 70px;
+
+        font-size: 32px;
+    }
+
+    .answer {
+        width: 100%;
+
+        font-size: 35px;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+
+    /* =========================
+       OPERATORS
+    ========================= */
+
+    .operators {
+        width: 100%;
+        height: auto;
+
+        margin: 10px 0;
+
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 8px;
+    }
+
+    .operand {
+        width: 100%;
+        height: 55px;
+
+        font-size: 30px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       KEYPAD
+    ========================= */
+
+    .keypad {
+        width: 100%;
+        height: auto;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        overflow: hidden;
+    }
+
+
+    /* THIS IS THE IMPORTANT FIX */
+
+    .row {
+        width: 100%;
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 10px;
+
+        flex: none;
+
+        flex-direction: unset;
+
+        align-items: unset;
+    }
+
+
+    /* =========================
+       KEYS
+    ========================= */
+
+    .key {
+        width: 100%;
+        height: 65px;
+
+        min-width: 0;
+
+        padding: 0;
+
+        font-size: 30px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       EQUAL
+    ========================= */
+
+    .submit {
+        width: 75%;
+        height: 60px;
+
+        margin: 15px auto 0;
+
+        font-size: 32px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px 25px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .calci {
+        max-width: 420px;
+        padding: 12px;
+    }
+
+    .screen {
+        height: 110px;
+    }
+
+    .operand1,
+    .operand2,
+    .operator {
+        font-size: 28px;
+    }
+
+    .answer {
+        font-size: 30px;
+    }
+
+    .operand {
+        height: 50px;
+        font-size: 27px;
+    }
+
+    .keypad {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .row {
+        gap: 8px;
+    }
+
+    .key {
+        height: 58px;
+        font-size: 27px;
+    }
+
+    .submit {
+        width: 80%;
+        height: 55px;
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONE
+========================================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .calci {
+        padding: 10px;
+    }
+
+    .screen {
+        height: 100px;
+    }
+
+    .operand1,
+    .operand2,
+    .operator {
+        font-size: 24px;
+    }
+
+    .answer {
+        font-size: 27px;
+    }
+
+    .operand {
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .keypad {
+        padding: 8px;
+    }
+
+    .row {
+        gap: 7px;
+    }
+
+    .key {
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .submit {
+        height: 50px;
+        font-size: 27px;
+    }
+}
